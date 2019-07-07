@@ -3,7 +3,7 @@ package Foto_Service.Point_one;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Day {
+public class Day implements Frame_day, Facturable{
 	 String date;
 	 
 	 	List<String> facture;
