@@ -18,15 +18,15 @@ class Recognize {
 		this.text = get_text();
 		
 //console interface 
-		System.out.println("====================");
+		//System.out.println("====================");
 		System.out.println(day.get_date());
-		System.out.println("result:");
+		//System.out.println("result:");
 		System.out.println("begin_cash: " + day.get_begin_cash());
 		System.out.println("end_cash: " + day.get_end_cash());
 		System.out.println("salary: " + day.get_salary());  
-		System.out.println("====================");
+		//System.out.println("====================");
 		
-		System.out.println("facture size: " + day.get_facture().size());
+		//System.out.println("facture size: " + day.get_facture().size());
 		//delete
 		day_facture = day.get_facture();
 	}
@@ -43,7 +43,7 @@ class Recognize {
         
 	        for(int i = 0; i < day_list.length; i++) {
 	        	sort_kind(day_list[i]);
-	        		System.out.println(day_list[i]);
+	        		//System.out.println(day_list[i]);
 	        }
 		return s;
 	}
