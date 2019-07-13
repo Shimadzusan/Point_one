@@ -11,14 +11,15 @@ class Recognize {
 	Frame_day day;
 	List<String> day_facture;
 	
-	Recognize(String address) throws IOException {
+	Recognize(String address, Frame_day day) throws IOException {
 		this.address = address;
-		day = new Day();
+		this.day = day;
 		day_facture = new ArrayList();
 		this.text = get_text();
 		
 //console interface 
 		//System.out.println("====================");
+		System.out.println( "===Point_one===" );
 		System.out.println(day.get_date());
 		//System.out.println("result:");
 		System.out.println("begin_cash: " + day.get_begin_cash());
@@ -34,9 +35,9 @@ class Recognize {
 	String get_text() throws IOException {
 		FileInputStream fin = new FileInputStream(address);  
         
-        byte[] buffer = new byte[fin.available()];
-        	fin.read(buffer, 0, buffer.length);
-        		String s = new String(buffer, "Cp1251");
+	        byte[] buffer = new byte[fin.available()];
+	        	fin.read(buffer, 0, buffer.length);
+	        		String s = new String(buffer, "Cp1251");
         
 //***разделяем текст
         String[] day_list = s.split("\\r\\n"); //total notes for day (code 13 10 is new line)
