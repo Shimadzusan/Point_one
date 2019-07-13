@@ -11,6 +11,7 @@ public class Launch {
 		
 //===============BETTA
 		 Frame_day day = new Day();
+		 Sortable sort_day = new Sort_day();
 		 
 		 Recognize recognize = new Recognize("C:\\Users\\AMD WIN\\Desktop\\statement.txt", day);
 		 //C:\Users\AMD WIN\Desktop 
@@ -18,8 +19,8 @@ public class Launch {
 		 System.out.println();
 		 System.out.println("   ===BETTA===");
 		 
-//!*	 Facturable fact = recognize.get_day();
-		 Deep_Recognize deep = new Deep_Recognize(recognize.get_day());
+
+		 Deep_Recognize deep = new Deep_Recognize(day);
 
 //=========Report
 		 System.out.println();

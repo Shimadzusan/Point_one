@@ -82,7 +82,7 @@ public class Deep_Recognize {
 		System.out.println("payment for pulti: -" + pulti_minus);
 		System.out.println("payment for baget: -" + baget_minus);
 		System.out.println("payment for fotolab: -" + fotolab_minus);
-		System.out.println("other: " + (payment - nicom_minus - pulti_minus - baget_minus - fotolab_minus));
+		System.out.println("other: -" + (payment - nicom_minus - pulti_minus - baget_minus - fotolab_minus));
 		
 		
 		return 0;

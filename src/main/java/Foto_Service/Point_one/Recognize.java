@@ -11,11 +11,14 @@ class Recognize {
 	Frame_day day;
 	List<String> day_facture;
 	
+	String[] day_list;
+	
 	Recognize(String address, Frame_day day) throws IOException {
 		this.address = address;
 		this.day = day;
 		day_facture = new ArrayList();
 		this.text = get_text();
+		day_init();
 		
 //console interface 
 		//System.out.println("====================");
@@ -34,19 +37,22 @@ class Recognize {
 	
 	String get_text() throws IOException {
 		FileInputStream fin = new FileInputStream(address);  
-        
 	        byte[] buffer = new byte[fin.available()];
 	        	fin.read(buffer, 0, buffer.length);
 	        		String s = new String(buffer, "Cp1251");
-        
+	        			return s;
+	}
+//begin day_init complex, this complex contains 3 methods
+//==========================================================================================
+	private void day_init() {
+		
 //***разделяем текст
-        String[] day_list = s.split("\\r\\n"); //total notes for day (code 13 10 is new line)
-        
-	        for(int i = 0; i < day_list.length; i++) {
+		 day_list = text.split("\\r\\n"); //total notes for day (code 13 10 is new line)
+		        
+		  for(int i = 0; i < day_list.length; i++) {
 	        	sort_kind(day_list[i]);
 	        		//System.out.println(day_list[i]);
 	        }
-		return s;
 	}
 
 	private void sort_kind(String element) {
@@ -71,10 +77,6 @@ class Recognize {
 		day.set_facture(element);
 	}
 	
-	public Frame_day get_day() {
-		return this.day;
-	}
-	
 	private int get_number(String text) {
 		char[] ch = text.toCharArray();
 		String number = "";
@@ -84,4 +86,11 @@ class Recognize {
 			
 	return Integer.parseInt(number);
 	}
+// end of day_init complex
+//=========================================================================================
+	
+//	public Frame_day get_day() {
+//		return this.day;
+//	}
+	
 }
