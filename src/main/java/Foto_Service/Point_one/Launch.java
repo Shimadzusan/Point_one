@@ -13,7 +13,7 @@ public class Launch {
 		 Frame_day day = new Day();
 		 Sortable sort_day = new Sort_day();
 		 
-		 Recognize recognize = new Recognize("C:\\Users\\AMD WIN\\Desktop\\statement.txt", day);
+		 Recognize recognize = new Recognize("C:\\Users\\AMD WIN\\Desktop\\statement_x.txt", day);
 		 //C:\Users\AMD WIN\Desktop 
 		 //C:\\Users\\Aleksey\\Desktop\\statement.txt
 		 System.out.println();
