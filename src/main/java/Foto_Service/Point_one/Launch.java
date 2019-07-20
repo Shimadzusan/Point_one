@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
  
 import Foto_Service.Point_one.Report.Excell_chief_report;
+import Foto_Service.Point_one.Report.Txt_chief_report;
+import Foto_Service.Point_one.Report.Xml_history;
 
 public class Launch {
 
@@ -61,7 +63,9 @@ public class Launch {
 //=========Report
 		 System.out.println();
 		 System.out.println("=====reporting mode=====");
-		 	new Excell_chief_report();
+		 	//new Excell_chief_report();
+		 	new Txt_chief_report( day, sort_day);
+		 	new Xml_history( day, sort_day);
 		 	
 	}
 
