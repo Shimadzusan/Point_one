@@ -1,11 +1,14 @@
 package Foto_Service.Point_one;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sort_day implements Sortable {
 	
 	int income, payment, sber, nicom, pults, foto, copy, print,
 	nicom_minus, pults_minus, baget_minus, fotolab_minus;
+	
+	ArrayList<String> list;
 
 	@Override
 	public List<String> get_facture() {

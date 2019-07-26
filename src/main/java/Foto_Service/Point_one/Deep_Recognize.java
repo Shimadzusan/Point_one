@@ -18,22 +18,22 @@ public class Deep_Recognize {
 	
 	public int balance() {
 //общие поступления
-		int income = 0;
-		int payment = 0;
-		
-		int nicom = 0;
-		int pulti = 0;
-		int nicom_minus = 0;
-		int pulti_minus = 0;
-		
-		int sber = 0;
-		
-		int fnd = 0;
-		int copy = 0;
-		int print = 0;
-		
-		int baget_minus = 0;
-		int fotolab_minus = 0;
+//		int income = 0;
+//		int payment = 0;
+//		
+//		int nicom = 0;
+//		int pulti = 0;
+//		int nicom_minus = 0;
+//		int pulti_minus = 0;
+//		
+//		int sber = 0;
+//		
+//		int fnd = 0;
+//		int copy = 0;
+//		int print = 0;
+//		
+//		int baget_minus = 0;
+//		int fotolab_minus = 0;
 		
 		
 		
