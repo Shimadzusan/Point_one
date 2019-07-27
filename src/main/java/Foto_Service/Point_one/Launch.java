@@ -2,7 +2,8 @@ package Foto_Service.Point_one;
 
 import java.io.IOException;
 import java.util.ArrayList;
- 
+import java.util.List;
+
 import Foto_Service.Point_one.Report.Excell_chief_report;
 import Foto_Service.Point_one.Report.Txt_chief_report;
 import Foto_Service.Point_one.Report.Xml_history;
@@ -15,6 +16,8 @@ public class Launch {
 //===============BETTA
 		 Frame_day day = new Day(); 
 		 Sortable sort_day = new Sort_day();
+		 
+		 Sortable sort_betta = new Sort_day();
 		  
 
 		 Recognize recognize = new Recognize("C:\\Users\\AMD WIN\\Desktop\\statement.txt", day);
@@ -66,7 +69,22 @@ public class Launch {
 		 	//new Excell_chief_report();
 		 	new Txt_chief_report( day, sort_day);
 		 	new Xml_history( day, sort_day);
+		 	System.out.println("-----------------------------------");
 		 	
+		 	ArrayList<String> list = new ArrayList<String>();
+		 	list.add("one");
+		 	list.add("two");
+		 	list.add("three");
+		 	//sort_day.setId(list);
+		 	
+		 	
+		 	if(sort_day.getId() instanceof List) {
+		 	ArrayList list_two = (ArrayList) sort_day.getId();
+		 	System.out.println(list_two.size());
+		 	
+		 	}
+		 	//ArrayList<Sring> list_three
+		 	System.out.println(sort_day.getId());
 	}
 
 }

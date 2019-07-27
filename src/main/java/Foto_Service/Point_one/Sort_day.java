@@ -3,13 +3,25 @@ package Foto_Service.Point_one;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sort_day implements Sortable {
+public class Sort_day <Ge> implements Sortable {
 	
-	int income, payment, sber, nicom, pults, foto, copy, print,
-	nicom_minus, pults_minus, baget_minus, fotolab_minus;
+	int income, payment, sber, nicom, pults, copy, print,
+	nicom_minus, pults_minus, baget_minus, fotolab_minus, foto;
 	
 	ArrayList<String> list;
-
+//===========================================================	
+	Ge generic;
+	
+//	public void set_generic(G generic) {
+//        this.generic =  generic;
+//    }
+//	
+//	public <G> G get_generic() {
+//		//if(value instanceof Integer)System.out.println("true");;
+//		return (G) this.generic;
+//		
+//	}
+//==========================================================
 	@Override
 	public List<String> get_facture() {
 		
@@ -63,14 +75,10 @@ public class Sort_day implements Sortable {
 			return this.pults;
 		}
 
-		@Override
-		public void set_foto(int foto) {
-			this.foto = foto;
-			
-		}
+		
 
 		@Override
-		public int get_foto() {
+		public  int get_foto() {
 			return this.foto;
 		}
 
@@ -134,6 +142,23 @@ public class Sort_day implements Sortable {
 		@Override
 		public int get_fotolab_minus() {
 			return this.fotolab_minus;
+		}
+
+		public  void set_foto(int foto) {
+			this.foto = foto;
+			
+		}
+
+		@Override
+		public Ge getId() {
+		
+			return this.generic;
+		}
+
+		@Override
+		public void setId(Object id) {
+			this.generic = (Ge) id;
+			
 		}
 
 }

@@ -24,6 +24,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Aleksey/Downloads/windows/java lib/poi-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AMD WIN/Desktop/bel_alex/java_lib/poi-4.1.0/poi-4.1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

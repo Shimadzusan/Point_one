@@ -34,6 +34,7 @@ public class Deep_Recognize {
 //		
 //		int baget_minus = 0;
 //		int fotolab_minus = 0;
+		ArrayList<String> list_id;
 		
 		
 		
@@ -57,7 +58,26 @@ public class Deep_Recognize {
 						if(s.contains("пульты")) sort_day.set_pults(sort_day.get_pults() + get_number((String)deal_list.get(i)));
 						if(s.contains("сбер")) sort_day.set_sber(sort_day.get_sber() + get_number((String)deal_list.get(i)));
 						
-						if(s.contains("фнд")) sort_day.set_foto(sort_day.get_foto() + get_number((String)deal_list.get(i)));
+						if(s.contains("фнд")) {
+							sort_day.set_foto(sort_day.get_foto() + get_number((String)deal_list.get(i)));
+							
+								if(sort_day.getId() != null) {
+									System.out.println("+");
+									list_id = (ArrayList<String>) sort_day.getId();
+									list_id.add(s);
+									sort_day.setId(list_id);
+								}
+								else {
+									list_id = new ArrayList<String>();
+									System.out.println("---");
+									list_id.add(s);
+									sort_day.setId(list_id);
+								}
+						}
+						
+						
+						
+						
 						if(s.contains("копия")) sort_day.set_copy(sort_day.get_copy() + get_number((String)deal_list.get(i)));
 						if(s.contains("печать")) sort_day.set_print(sort_day.get_print() + get_number((String)deal_list.get(i)));
 						
