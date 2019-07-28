@@ -1,8 +1,19 @@
 package Foto_Service.Point_one;
 
-public interface Sortable extends Facturable{
-
-	 public void set_income(int income);
+public interface Sortable <Ge> extends Facturable{
+	
+	void set_list_foto(Ge id);
+	public Ge get_list_foto();
+	
+	void set_list_copy(Ge id);
+	public Ge get_list_copy();
+	
+	void set_list_print(Ge id);
+	public Ge get_list_print();
+	 
+	
+//==========================================
+	public void set_income(int income);
 	 public int get_income();
 	    
 	 public void set_payment(int payment);
@@ -39,4 +50,6 @@ public interface Sortable extends Facturable{
 	 
 	 public void set_fotolab_minus(int fotolab_minus);
 	 public int get_fotolab_minus();
+	
+	
 }

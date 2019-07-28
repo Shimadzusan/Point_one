@@ -18,22 +18,25 @@ public class Deep_Recognize {
 	
 	public int balance() {
 //общие поступления
-		int income = 0;
-		int payment = 0;
-		
-		int nicom = 0;
-		int pulti = 0;
-		int nicom_minus = 0;
-		int pulti_minus = 0;
-		
-		int sber = 0;
-		
-		int fnd = 0;
-		int copy = 0;
-		int print = 0;
-		
-		int baget_minus = 0;
-		int fotolab_minus = 0;
+//		int income = 0;
+//		int payment = 0;
+//		
+//		int nicom = 0;
+//		int pulti = 0;
+//		int nicom_minus = 0;
+//		int pulti_minus = 0;
+//		
+//		int sber = 0;
+//		
+//		int fnd = 0;
+//		int copy = 0;
+//		int print = 0;
+//		
+//		int baget_minus = 0;
+//		int fotolab_minus = 0;
+		ArrayList<String> list_foto;
+		ArrayList<String> list_copy;
+		ArrayList<String> list_print;
 		
 		
 		
@@ -57,9 +60,51 @@ public class Deep_Recognize {
 						if(s.contains("пульты")) sort_day.set_pults(sort_day.get_pults() + get_number((String)deal_list.get(i)));
 						if(s.contains("сбер")) sort_day.set_sber(sort_day.get_sber() + get_number((String)deal_list.get(i)));
 						
-						if(s.contains("фнд")) sort_day.set_foto(sort_day.get_foto() + get_number((String)deal_list.get(i)));
-						if(s.contains("копия")) sort_day.set_copy(sort_day.get_copy() + get_number((String)deal_list.get(i)));
-						if(s.contains("печать")) sort_day.set_print(sort_day.get_print() + get_number((String)deal_list.get(i)));
+						if(s.contains("фнд")) {
+							sort_day.set_foto(sort_day.get_foto() + get_number((String)deal_list.get(i)));
+							
+								if(sort_day.get_list_foto() != null) {
+									list_foto = (ArrayList<String>) sort_day.get_list_foto();
+									list_foto.add(s);
+									sort_day.set_list_foto(list_foto);
+								}
+								else {
+									list_foto = new ArrayList<String>();
+									list_foto.add(s);
+									sort_day.set_list_foto(list_foto);
+								}
+						}
+						
+						
+						
+						
+						if(s.contains("копия")) {
+							sort_day.set_copy(sort_day.get_copy() + get_number((String)deal_list.get(i)));
+							if(sort_day.get_list_copy() != null) {
+								list_copy = (ArrayList<String>) sort_day.get_list_copy();
+								list_copy.add(s);
+								sort_day.set_list_copy(list_copy);
+							}
+							else {
+								list_copy = new ArrayList<String>();
+								list_copy.add(s);
+								sort_day.set_list_copy(list_copy);
+							}
+						}
+						
+						if(s.contains("печать")) {
+							sort_day.set_print(sort_day.get_print() + get_number((String)deal_list.get(i)));
+							if(sort_day.get_list_print() != null) {
+								list_print = (ArrayList<String>) sort_day.get_list_print();
+								list_print.add(s);
+								sort_day.set_list_print(list_print);
+							}
+							else {
+								list_print = new ArrayList<String>();
+								list_print.add(s);
+								sort_day.set_list_print(list_print);
+							}
+						}
 						
 					}
 			}

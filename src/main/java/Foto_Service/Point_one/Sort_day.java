@@ -1,12 +1,27 @@
 package Foto_Service.Point_one;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Sort_day implements Sortable {
+public class Sort_day <Ge> implements Sortable {
 	
-	int income, payment, sber, nicom, pults, foto, copy, print,
-	nicom_minus, pults_minus, baget_minus, fotolab_minus;
-
+	int income, payment, sber, nicom, pults, copy, print,
+	nicom_minus, pults_minus, baget_minus, fotolab_minus, foto;
+	
+	ArrayList<String> list;
+//===========================================================	
+	Ge list_foto, list_copy, list_print;
+	
+//	public void set_generic(G generic) {
+//        this.generic =  generic;
+//    }
+//	
+//	public <G> G get_generic() {
+//		//if(value instanceof Integer)System.out.println("true");;
+//		return (G) this.generic;
+//		
+//	}
+//==========================================================
 	@Override
 	public List<String> get_facture() {
 		
@@ -60,14 +75,10 @@ public class Sort_day implements Sortable {
 			return this.pults;
 		}
 
-		@Override
-		public void set_foto(int foto) {
-			this.foto = foto;
-			
-		}
+		
 
 		@Override
-		public int get_foto() {
+		public  int get_foto() {
 			return this.foto;
 		}
 
@@ -131,6 +142,42 @@ public class Sort_day implements Sortable {
 		@Override
 		public int get_fotolab_minus() {
 			return this.fotolab_minus;
+		}
+
+		public  void set_foto(int foto) {
+			this.foto = foto;
+			
+		}
+//==============generic stage=====================
+		@Override
+		public Ge get_list_foto() {
+			return this.list_foto;
+		}
+
+		@Override
+		public void set_list_foto(Object list_foto) {
+			this.list_foto = (Ge) list_foto;
+			
+		}
+
+		@Override
+		public void set_list_copy(Object list_copy) {
+			this.list_copy = (Ge) list_copy;
+		}
+
+		@Override
+		public Ge get_list_copy() {
+			return this.list_copy;
+		}
+
+		@Override
+		public void set_list_print(Object list_print) {
+			this.list_print = (Ge) list_print;
+		}
+
+		@Override
+		public Ge get_list_print() {
+			return this.list_print;
 		}
 
 }

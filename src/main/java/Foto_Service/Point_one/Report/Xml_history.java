@@ -51,4 +51,9 @@ public class Xml_history {
 		private String removeLastChar(String str) {
 		    return str.substring(0, str.length() - 1);
 		}
+		
+		public void delete_last_note() {
+			//!!!!
+			
+		}
 }
