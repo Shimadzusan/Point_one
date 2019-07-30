@@ -10,8 +10,7 @@ public class Alpha {
 		Betta betta = new Betta();
 		ArrayList list = new ArrayList();
 		
-		
-		
+	
 		list.add("asd");
 		list.add("asddfdf");
 		//System.out.println(betta.get_value(5) + 6);
@@ -20,6 +19,7 @@ public class Alpha {
 		
 		betta.set_value( 100);
 		System.out.println(betta.get_value());
+	
 	}
 
 }

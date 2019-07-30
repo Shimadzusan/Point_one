@@ -1,12 +1,34 @@
 package Foto_Service.Point_one;
 
 public interface Sortable <Ge> extends Facturable{
-
-	 public Ge getId();
-	 void setId(Ge id);
-	// public Ge setId(Ge id);
-	 //public void setId(Ge id);
 	
+	void set_list_foto(Ge id);
+	public Ge get_list_foto();
+	
+	void set_list_copy(Ge id);
+	public Ge get_list_copy();
+	
+	void set_list_print(Ge id);
+	public Ge get_list_print();
+	
+	void set_list_baget(Ge id);
+	public Ge get_list_baget();
+	
+	void set_list_fotolab(Ge id);
+	public Ge get_list_fotolab();
+	
+	void set_list_sphera(Ge id);
+	public Ge get_list_sphera();
+	
+// technic
+	void set_list_nicom(Ge id);
+	public Ge get_list_nicom();
+	
+	void set_list_pults(Ge id);
+	public Ge get_list_pults();
+	
+	
+//==========================================
 	public void set_income(int income);
 	 public int get_income();
 	    

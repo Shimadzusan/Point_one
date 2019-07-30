@@ -10,7 +10,7 @@ public class Sort_day <Ge> implements Sortable {
 	
 	ArrayList<String> list;
 //===========================================================	
-	Ge generic;
+	Ge list_foto, list_copy, list_print, list_baget, list_fotolab, list_sphera, list_nicom, list_pults;
 	
 //	public void set_generic(G generic) {
 //        this.generic =  generic;
@@ -22,6 +22,40 @@ public class Sort_day <Ge> implements Sortable {
 //		
 //	}
 //==========================================================
+	Sort_day() {
+		ArrayList<String> foto = new ArrayList<String>();
+		foto.add("0");
+		this.list_foto = (Ge) foto;
+		
+		ArrayList<String> copy = new ArrayList<String>();
+		copy.add("0");
+		this.list_copy = (Ge) copy;
+		
+		ArrayList<String> print = new ArrayList<String>();
+		print.add("0");
+		this.list_print = (Ge) print;
+		
+		ArrayList<String> baget = new ArrayList<String>();
+		baget.add("0");
+		this.list_baget = (Ge) baget;
+		
+		ArrayList<String> fotolab = new ArrayList<String>();
+		fotolab.add("0");
+		this.list_fotolab = (Ge) fotolab;
+		
+		ArrayList<String> sphera = new ArrayList<String>();
+		sphera.add("0");
+		this.list_sphera = (Ge) sphera;
+		
+		ArrayList<String> nicom = new ArrayList<String>();
+		nicom.add("0");
+		this.list_nicom = (Ge) nicom;
+		
+		ArrayList<String> pults = new ArrayList<String>();
+		pults.add("0");
+		this.list_pults = (Ge) pults;
+		
+	}
 	@Override
 	public List<String> get_facture() {
 		
@@ -148,17 +182,82 @@ public class Sort_day <Ge> implements Sortable {
 			this.foto = foto;
 			
 		}
-
+//==============generic stage=====================
 		@Override
-		public Ge getId() {
-		
-			return this.generic;
+		public Ge get_list_foto() {
+			return this.list_foto;
 		}
 
 		@Override
-		public void setId(Object id) {
-			this.generic = (Ge) id;
+		public void set_list_foto(Object list_foto) {
+			this.list_foto = (Ge) list_foto;
 			
+		}
+
+		@Override
+		public void set_list_copy(Object list_copy) {
+			this.list_copy = (Ge) list_copy;
+		}
+
+		@Override
+		public Ge get_list_copy() {
+			return this.list_copy;
+		}
+
+		@Override
+		public void set_list_print(Object list_print) {
+			this.list_print = (Ge) list_print;
+		}
+
+		@Override
+		public Ge get_list_print() {
+			return this.list_print;
+		}
+		
+//====================================================
+		@Override
+		public void set_list_baget(Object list_baget) {
+			this.list_baget = (Ge) list_baget;
+			
+		}
+		@Override
+		public Object get_list_baget() {
+			return this.list_baget;
+		}
+		@Override
+		public void set_list_fotolab(Object list_fotolab) {
+			this.list_fotolab = (Ge) list_fotolab;
+		}
+		@Override
+		public Object get_list_fotolab() {
+			return this.list_fotolab;
+		}
+		@Override
+		public void set_list_sphera(Object list_sphera) {
+			this.list_sphera = (Ge) list_sphera;
+		}
+		@Override
+		public Object get_list_sphera() {
+			return this.list_sphera;
+		}
+		
+//====technic
+		@Override
+		public void set_list_nicom(Object list_nicom) {
+			this.list_nicom = (Ge) list_nicom;
+		}
+		@Override
+		public Object get_list_nicom() {
+			return this.list_nicom;
+		}
+		@Override
+		public void set_list_pults(Object list_pults) {
+			this.list_pults = (Ge) list_pults;
+			
+		}
+		@Override
+		public Object get_list_pults() {
+			return this.list_pults;
 		}
 
 }

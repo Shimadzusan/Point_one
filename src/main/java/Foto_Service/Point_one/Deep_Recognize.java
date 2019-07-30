@@ -34,13 +34,103 @@ public class Deep_Recognize {
 //		
 //		int baget_minus = 0;
 //		int fotolab_minus = 0;
-		ArrayList<String> list_id;
+		ArrayList<String> list_foto;
+		ArrayList<String> list_copy;
+		ArrayList<String> list_print;
+		
+		ArrayList<String> list_fotolab;
+		ArrayList<String> list_baget;
+		ArrayList<String> list_sphera;
+		
+		ArrayList<String> list_nicom;
+		ArrayList<String> list_pults;
 		
 		
 		
 		
 			for(int i = 0; i < deal_list.size(); i++) {
 				String s = (String)deal_list.get(i);
+//=======================================================================================
+		if(s.contains("фотолаб")) {
+			if(sort_day.get_list_fotolab() != null) {
+				list_fotolab = (ArrayList<String>) sort_day.get_list_fotolab();
+				list_fotolab.add(s);
+			 
+				sort_day.set_list_fotolab(list_fotolab);
+
+			}
+			else {
+				list_fotolab = new ArrayList<String>();
+				list_fotolab.add(s);
+				sort_day.set_list_fotolab(list_fotolab);
+			}
+		}
+		
+		if(s.contains("багет")) {
+			if(sort_day.get_list_baget() != null) {
+				list_baget = (ArrayList<String>) sort_day.get_list_baget();
+				list_baget.add(s);
+			 
+				sort_day.set_list_baget(list_baget);
+
+			}
+			else {
+				list_baget = new ArrayList<String>();
+				list_baget.add(s);
+				sort_day.set_list_baget(list_baget);
+			}
+		}
+		
+		if(s.contains("сфера")) {
+			if(sort_day.get_list_sphera() != null) {
+				list_sphera = (ArrayList<String>) sort_day.get_list_sphera();
+				list_sphera.add(s);
+			 
+				sort_day.set_list_sphera(list_sphera);
+
+			}
+			else {
+				list_sphera = new ArrayList<String>();
+				list_sphera.add(s);
+				sort_day.set_list_sphera(list_sphera);
+			}
+		}
+		
+//technic
+		if(s.contains("ником")) {
+			if(sort_day.get_list_nicom() != null) {
+				list_nicom = (ArrayList<String>) sort_day.get_list_nicom();
+				list_nicom.add(s);
+			 
+				sort_day.set_list_nicom(list_nicom);
+
+			}
+			else {
+				list_nicom = new ArrayList<String>();
+				list_nicom.add(s);
+				sort_day.set_list_nicom(list_nicom);
+			}
+		}
+		
+		if(s.contains("пульты")) {
+			if(sort_day.get_list_pults() != null) {
+				list_pults = (ArrayList<String>) sort_day.get_list_pults();
+				list_pults.add(s);
+			 
+				sort_day.set_list_pults(list_pults);
+
+			}
+			else {
+				list_pults = new ArrayList<String>();
+				list_pults.add(s);
+				sort_day.set_list_pults(list_pults);
+			}
+		}
+		
+		
+				
+//=======================================================================================
+				
 					if(s.contains("минус")) {
 						//payment += get_number((String)deal_list.get(i));
 						sort_day.set_payment(sort_day.get_payment() + get_number((String)deal_list.get(i)));
@@ -61,25 +151,50 @@ public class Deep_Recognize {
 						if(s.contains("фнд")) {
 							sort_day.set_foto(sort_day.get_foto() + get_number((String)deal_list.get(i)));
 							
-								if(sort_day.getId() != null) {
-									System.out.println("+");
-									list_id = (ArrayList<String>) sort_day.getId();
-									list_id.add(s);
-									sort_day.setId(list_id);
+								if(sort_day.get_list_foto() != null) {
+									list_foto = (ArrayList<String>) sort_day.get_list_foto();
+									list_foto.add(s);
+								 
+									sort_day.set_list_foto(list_foto);
+		
 								}
 								else {
-									list_id = new ArrayList<String>();
-									System.out.println("---");
-									list_id.add(s);
-									sort_day.setId(list_id);
+									list_foto = new ArrayList<String>();
+									list_foto.add(s);
+									sort_day.set_list_foto(list_foto);
 								}
 						}
 						
 						
 						
 						
-						if(s.contains("копия")) sort_day.set_copy(sort_day.get_copy() + get_number((String)deal_list.get(i)));
-						if(s.contains("печать")) sort_day.set_print(sort_day.get_print() + get_number((String)deal_list.get(i)));
+						if(s.contains("копия")) {
+							sort_day.set_copy(sort_day.get_copy() + get_number((String)deal_list.get(i)));
+							if(sort_day.get_list_copy() != null) {
+								list_copy = (ArrayList<String>) sort_day.get_list_copy();
+								list_copy.add(s);
+								sort_day.set_list_copy(list_copy);
+							}
+							else {
+								list_copy = new ArrayList<String>();
+								list_copy.add(s);
+								sort_day.set_list_copy(list_copy);
+							}
+						}
+						
+						if(s.contains("печать")) {
+							sort_day.set_print(sort_day.get_print() + get_number((String)deal_list.get(i)));
+							if(sort_day.get_list_print() != null) {
+								list_print = (ArrayList<String>) sort_day.get_list_print();
+								list_print.add(s);
+								sort_day.set_list_print(list_print);
+							}
+							else {
+								list_print = new ArrayList<String>();
+								list_print.add(s);
+								sort_day.set_list_print(list_print);
+							}
+						}
 						
 					}
 			}
