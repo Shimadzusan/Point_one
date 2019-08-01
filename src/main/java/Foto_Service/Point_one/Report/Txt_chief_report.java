@@ -42,6 +42,10 @@ public class Txt_chief_report {
 		int nicom = 0;
 		int pults = 0;
 		
+		int other_two = 0;
+		
+		int card_data = 0;
+		
 //=======================================================complex for count largest array
 		 try {
 			 ArrayList<List> list_foto = (ArrayList<List>) sort_day.get_list_foto();
@@ -97,12 +101,29 @@ public class Txt_chief_report {
 			} catch(NullPointerException e) {
 				nicom = 0;
 			}
+		
 		try {
 			ArrayList<List> list_pults = (ArrayList<List>) sort_day.get_list_pults();
 		pults = list_pults.size();
 			} catch(NullPointerException e) {
 				pults = 0;
 			}
+//================other====
+		
+		try {
+			ArrayList<List> list_other = (ArrayList<List>) sort_day.get_list_other();
+		other_two = list_other.size();
+			} catch(NullPointerException e) {
+				other_two = 0;
+			}
+//=================card========
+		try {
+			ArrayList<List> list_card_data = (ArrayList<List>) sort_day.get_list_card_data();
+		card_data = list_card_data.size();
+			} catch(NullPointerException e) {
+				card_data = 0;
+			}
+		
 //end===================================end	
 		int largest_number = 0;
 		//other
@@ -120,6 +141,11 @@ public class Txt_chief_report {
 		
 		all_parameters.add(nicom);
 		all_parameters.add(pults);
+		
+		all_parameters.add(other_two);
+		
+		all_parameters.add(card_data);
+		
 		
 			for(int i = 0; i < all_parameters.size()-1; i++) {
 				if(all_parameters.get(i) > all_parameters.get(i+1)) {
@@ -144,15 +170,22 @@ public class Txt_chief_report {
 			for(int i = 0; i < largest_number; i++ ) {
 				if(i == 0) {
 					s = s + " " + "\r\n"; 
-					s = s + "дата" + "\t" + "фнд" + "\t" + "копия" + "\t" + "печать" + "\t" + "багет" + "\t" + "фотолаб" + "\t" + "сфера" + "\t" + "ником" + "\t" + "пульты" + "\t" + "зарплата" + "\t" + "касса утро" + "\t" + "касса вечер" + "\r\n";
+					s = s + "дата" + "\t" + "фнд" + "\t" + "копия" + "\t" + "печать" + "\t" + "багет" + "\t" + "фотолаб" + "\t" + "сфера" + "\t" + "другое" + "\t" + "на карту" + "\t" + "за услугу" + 
+					"\t" + "итого" + "\t" + "ником" + "\t" + "пульты" + "\t" + "всего" + "\t" + "зарплата" + "\t" + "касса утро" + "\t" + "касса вечер" + "\r\n";
 					s = s + day.get_date() + "\t" + get_number(((ArrayList<String>) sort_day.get_list_foto()).get(i)) + 
 					"\t" + get_number(((ArrayList<String>) sort_day.get_list_copy()).get(i)) +
 					"\t" + get_number(((ArrayList<String>) sort_day.get_list_print()).get(i)) + 
 					"\t" + get_number(((ArrayList<String>) sort_day.get_list_baget()).get(i)) +
 					"\t" + get_number(((ArrayList<String>) sort_day.get_list_fotolab()).get(i)) +
 					"\t" + get_number(((ArrayList<String>) sort_day.get_list_sphera()).get(i)) +
+					"\t" + get_number(((ArrayList<String>) sort_day.get_list_other()).get(i)) +
+					
+					 "\t" + get_card(((ArrayList<String>) sort_day.get_list_card_data()).get(i)) +
+					
+					 "\t" + "" + total + "" +
 					"\t" + get_number(((ArrayList<String>) sort_day.get_list_nicom()).get(i)) +
 					"\t" + get_number(((ArrayList<String>) sort_day.get_list_pults()).get(i)) +
+					"\t" + "" + sort_day.get_income()  + "" +
 					"\t" + day.get_salary() + "\t" + day.get_begin_cash() + "\t" + day.get_end_cash()  + "\r\n";
 				}
 				
@@ -201,6 +234,28 @@ public class Txt_chief_report {
 							s = s + "\t" + " ";
 						}
 						
+						if(other_two > i) {
+							s = s + "\t" + get_number(((ArrayList<String>) sort_day.get_list_other()).get(i));
+						}
+						else {
+							s = s + "\t" + " ";
+						}
+						
+						
+						//for other
+						//s = s + "\t" + " ";
+						//for card_data
+						if(card_data > i) {
+							s = s + "\t" + get_card(((ArrayList<String>) sort_day.get_list_card_data()).get(i));
+							//s = s + "\t" + get_number(((ArrayList<String>) sort_day.get_list_other()).get(i));
+						}
+						else {
+							s = s + "\t" + " " + "\t" + " ";
+						}
+						
+						
+						s = s + "\t" + " ";
+						
 						if(nicom > i) {
 							s = s + "\t" + get_number(((ArrayList<String>) sort_day.get_list_nicom()).get(i));
 						}
@@ -215,7 +270,8 @@ public class Txt_chief_report {
 							s = s + "\t" + " ";
 						}
 						
-					s = s + "\t" + " " + "\t" + " " + "\t" + " " + "\r\n";	
+					s = s + "\t" + "\t" + " " + "\t" + " " + "\t" + " " + "\r\n";	
+					
 				}
 				
 			}
@@ -241,6 +297,32 @@ public class Txt_chief_report {
 			}
 			
 	return z;
+	}
+	
+	private String get_card(String text) {
+		char[] ch = text.toCharArray();
+		String number = "";
+		boolean flag_service = true;
+		int index_service = 0;
+			for(int i = 0; i < ch.length; i++) {
+				if(Character.isDigit(ch[i])) { 
+					number += "" + ch[i];
+					
+				if(flag_service == true) {
+						index_service = i;
+							flag_service = false;
+						
+					}
+				}
+			}
+			String s = text.substring(0, index_service);
+			int z = Integer.parseInt(number);
+			System.out.println("get_card: " + number + " " + s);
+			String s2 = number + "\t" + s;
+			
+			
+			
+	return s2;
 	}
 
 }

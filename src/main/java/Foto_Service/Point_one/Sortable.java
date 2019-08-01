@@ -26,7 +26,15 @@ public interface Sortable <Ge> extends Facturable{
 	
 	void set_list_pults(Ge id);
 	public Ge get_list_pults();
+// last
 	
+	void set_list_other(Ge id);
+	public Ge get_list_other();
+	
+//card data
+	
+	void set_list_card_data(Ge id);
+	public Ge get_list_card_data();
 	
 //==========================================
 	public void set_income(int income);

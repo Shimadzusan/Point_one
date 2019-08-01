@@ -17,23 +17,7 @@ public class Deep_Recognize {
 	}
 	
 	public int balance() {
-//общие поступления
-//		int income = 0;
-//		int payment = 0;
-//		
-//		int nicom = 0;
-//		int pulti = 0;
-//		int nicom_minus = 0;
-//		int pulti_minus = 0;
-//		
-//		int sber = 0;
-//		
-//		int fnd = 0;
-//		int copy = 0;
-//		int print = 0;
-//		
-//		int baget_minus = 0;
-//		int fotolab_minus = 0;
+
 		ArrayList<String> list_foto;
 		ArrayList<String> list_copy;
 		ArrayList<String> list_print;
@@ -45,11 +29,55 @@ public class Deep_Recognize {
 		ArrayList<String> list_nicom;
 		ArrayList<String> list_pults;
 		
+		ArrayList<String> list_other;
+		boolean flag_other = false;
 		
+		ArrayList<String> list_card_data;
 		
 		
 			for(int i = 0; i < deal_list.size(); i++) {
 				String s = (String)deal_list.get(i);
+				
+//card_data
+				if(s.contains("сбер") || s.contains("тинькофф")  || s.contains("почта-банк") || s.contains("сбербанк") || s.contains("тинькоф")) {
+					if(sort_day.get_list_card_data() != null) {
+						list_card_data = (ArrayList<String>) sort_day.get_list_card_data();
+						list_card_data.add(s);
+					 
+						sort_day.set_list_card_data(list_card_data);
+
+					}
+					else {
+						list_card_data = new ArrayList<String>();
+						list_card_data.add(s);
+						sort_day.set_list_card_data(list_card_data);
+					}
+				}
+				
+//==========================================
+				
+				flag_other = true;
+//===other===
+				if(s.contains("фнд") || s.contains("копия")  || s.contains("печать") || s.contains("багет") || s.contains("фотолаб") || s.contains("сфера") || s.contains("ником") || s.contains("пульты")) {
+					flag_other = false;
+				}		
+				
+				if(flag_other == true) {
+					
+					if(sort_day.get_list_other() != null) {
+						list_other = (ArrayList<String>) sort_day.get_list_other();
+						list_other.add(s);
+					 
+						sort_day.set_list_other(list_other);
+
+					}
+					else {
+						list_other = new ArrayList<String>();
+						list_other.add(s);
+						sort_day.set_list_other(list_other);
+					}
+					
+				}
 //=======================================================================================
 		if(s.contains("фотолаб")) {
 			if(sort_day.get_list_fotolab() != null) {
@@ -198,32 +226,6 @@ public class Deep_Recognize {
 						
 					}
 			}
-			
-//		System.out.println("result income: " + income);
-//		System.out.println("result payment: " + payment);
-//		
-//		System.out.println();
-//		System.out.println("+Plus");
-//		System.out.println("online_income: from sber = " + sber + "; from tinkoff = " + 0 + "; from po4ta-bank = " + 0);
-//		//System.out.println();
-//		System.out.println("income from nicom: " + nicom);
-//		System.out.println("income from pulti: " + pulti);
-		
-//		System.out.println();
-//		System.out.println("фнд: " + fnd);
-//		System.out.println("копия: " + copy);
-//		System.out.println("печать: " + print);
-//		System.out.println("other: " + (income - fnd - copy - print - pulti - nicom));
-//		System.out.println("total **: " + (fnd + copy + print + (income - fnd - copy - print - pulti - nicom)));
-//***MINUS***
-//		System.out.println();
-//		System.out.println("(-Minus-)");
-//		System.out.println("payment for nicom: -" + nicom_minus);
-//		System.out.println("payment for pulti: -" + pulti_minus);
-//		System.out.println("payment for baget: -" + baget_minus);
-//		System.out.println("payment for fotolab: -" + fotolab_minus);
-//		System.out.println("other: -" + (payment - nicom_minus - pulti_minus - baget_minus - fotolab_minus));
-//		System.out.println();
 		
 		return 0;
 	}

@@ -10,7 +10,7 @@ public class Sort_day <Ge> implements Sortable {
 	
 	ArrayList<String> list;
 //===========================================================	
-	Ge list_foto, list_copy, list_print, list_baget, list_fotolab, list_sphera, list_nicom, list_pults;
+	Ge list_foto, list_copy, list_print, list_baget, list_fotolab, list_sphera, list_nicom, list_pults, list_other, list_card_data;
 	
 //	public void set_generic(G generic) {
 //        this.generic =  generic;
@@ -54,6 +54,15 @@ public class Sort_day <Ge> implements Sortable {
 		ArrayList<String> pults = new ArrayList<String>();
 		pults.add("0");
 		this.list_pults = (Ge) pults;
+		
+		ArrayList<String> other = new ArrayList<String>();
+		other.add("0");
+		this.list_other = (Ge) other;
+		
+		
+		ArrayList<String> card_data = new ArrayList<String>();
+		card_data.add("0");
+		this.list_card_data = (Ge) card_data;
 		
 	}
 	@Override
@@ -258,6 +267,23 @@ public class Sort_day <Ge> implements Sortable {
 		@Override
 		public Object get_list_pults() {
 			return this.list_pults;
+		}
+		
+		@Override
+		public void set_list_other(Object list_other) {
+			this.list_other = (Ge) list_other;
+		}
+		@Override
+		public Object get_list_other() {
+			return this.list_other;
+		}
+		@Override
+		public void set_list_card_data(Object list_card_data) {
+			this.list_card_data = (Ge) list_card_data;
+		}
+		@Override
+		public Object get_list_card_data() {
+			return this.list_card_data;
 		}
 
 }
