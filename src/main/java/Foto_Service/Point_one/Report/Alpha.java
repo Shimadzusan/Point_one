@@ -1,43 +1,61 @@
 package Foto_Service.Point_one.Report;
 
-import java.util.ArrayList;
+
+import java.io.File;
+import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Alpha {
 
-	public static void main(String[] args) {
-		int[] array = new int[16];
-		Betta betta = new Betta();
-		ArrayList list = new ArrayList();
+	 public static void main(String[] args) {
+
+	        ObjectMapper mapper = new ObjectMapper();
+
+	        Staff staff = createStaff();
+ 
+
+	    }
+
+	    private static Staff createStaff() {
+
+	        Staff staff = new Staff();
+
+	        staff.setName("mkyong");
+	        staff.setAge(38);
+	        staff.setPosition(new String[]{"Founder", "CTO", "Writer"});
+	       
+	        return staff;
+
+	    }
+}
+class Staff {
+
+    private String name;
+    private int age;
+    private String[] position;              //  Array
+    private List<String> skills;            //  List
+    private Map<String, BigDecimal> salary; //  Map
+	public void setName(String string) {
+		// TODO Auto-generated method stub
 		
-	
-		list.add("asd");
-		list.add("asddfdf");
-		//System.out.println(betta.get_value(5) + 6);
-		betta.set_value(list);
-		System.out.println(betta.get_value());
+	}
+	public void setSalary(Map<String, BigDecimal> salary2) {
+		// TODO Auto-generated method stub
 		
-		betta.set_value( 100);
-		System.out.println(betta.get_value());
-	
+	}
+	public void setPosition(String[] strings) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setAge(int i) {
+		// TODO Auto-generated method stub
+		
 	}
 
+	// getters , setters, some boring stuff
 }
 
-class Betta <T>{
-	private T id, value;
-	
-	public <T> T get_value() {
-		//if(value instanceof Integer)System.out.println("true");;
-		return (T) this.value;
-		
-	}
-	
-	public void set_value(T value) {
-		this.value = value;
-	}
-}
-
-class Father {
-	
-}

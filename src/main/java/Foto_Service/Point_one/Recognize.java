@@ -34,7 +34,7 @@ class Recognize {
 //==========================================================================================
 	private void day_init() {
 		
-//***разделяем текст
+//***to parse the text
 		 day_list = text.split("\\r\\n"); //total notes for day (code 13 10 is new line)
 		        
 		  for(int i = 0; i < day_list.length; i++) {
@@ -74,11 +74,5 @@ class Recognize {
 			
 	return Integer.parseInt(number);
 	}
-// end of day_init complex
-//=========================================================================================
-	
-//	public Frame_day get_day() {
-//		return this.day;
-//	}
 	
 }

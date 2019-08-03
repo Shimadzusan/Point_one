@@ -20,7 +20,7 @@ public class Launch {
 		 Sortable sort_betta = new Sort_day();
 		  
 
-		 Recognize recognize = new Recognize("C:\\Users\\AMD WIN\\Desktop\\statement_x.txt", day);
+		 Recognize recognize = new Recognize("C:\\Users\\AMD WIN\\Desktop\\statement.txt", day);
 //C:\Users\AMD WIN\Desktop 
 //C:\\Users\\Aleksey\\Desktop\\statement.txt
 		 
@@ -66,26 +66,26 @@ public class Launch {
 //=========Report
 		 System.out.println();
 		 System.out.println("=====reporting mode=====");
-		 	//new Excell_chief_report();
+//		 	//new Excell_chief_report();
 		 	new Txt_chief_report( day, sort_day);
 		 	new Xml_history( day, sort_day);
-		 	System.out.println();
-//Octavian_excell
-		 	System.out.println("+===Point_one(object_Day(Betta))===+");
-		 	
-		 	System.out.println(day.get_date());
-			System.out.println("begin_cash: " + day.get_begin_cash());
-			System.out.println("end_cash: " + day.get_end_cash());
-		 	
-		 	
-		 	
-		 	if(sort_day.get_list_foto() instanceof List) {
-		 	ArrayList list_foto = (ArrayList) sort_day.get_list_foto();
-		 	//System.out.println(list_foto.size());
-		 	
-		 	}
-		 	//ArrayList<Sring> list_three
-		 	System.out.println("фнд: " + sort_day.get_list_foto());
+//		 	System.out.println();
+////Octavian_excell
+//		 	System.out.println("+===Point_one(object_Day(Betta))===+");
+//		 	
+//		 	System.out.println(day.get_date());
+//			System.out.println("begin_cash: " + day.get_begin_cash());
+//			System.out.println("end_cash: " + day.get_end_cash());
+//		 	
+//		 	
+//		 	
+//		 	if(sort_day.get_list_foto() instanceof List) {
+//		 	ArrayList list_foto = (ArrayList) sort_day.get_list_foto();
+//		 	//System.out.println(list_foto.size());
+//		 	
+//		 	}
+//		 	//ArrayList<Sring> list_three
+//		 	System.out.println("фнд: " + sort_day.get_list_foto());
 	}
 
 }

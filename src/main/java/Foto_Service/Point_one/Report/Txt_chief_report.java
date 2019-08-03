@@ -18,7 +18,7 @@ public class Txt_chief_report {
 	public Txt_chief_report(Frame_day day,Sortable sort_day) throws IOException {
 		this.day = day;
 		this.sort_day = sort_day;
-		
+		 
 		commit_report();
 		
 		System.out.println("txt(for excell) report committed");
@@ -154,7 +154,7 @@ public class Txt_chief_report {
 				
 			}
 		largest_number = all_parameters.get(all_parameters.size() - 1);
-		System.out.println(largest_number);
+		//System.out.println(largest_number);
 //---------------------------------------------------------------end
 		FileInputStream fin = new FileInputStream(address);
 	
@@ -293,7 +293,7 @@ public class Txt_chief_report {
 			
 			if(text.contains("минус")) {
 				z = 0 - z;
-				System.out.println(z);
+				//System.out.println(z);
 			}
 			
 	return z;
@@ -317,7 +317,7 @@ public class Txt_chief_report {
 			}
 			String s = text.substring(0, index_service);
 			int z = Integer.parseInt(number);
-			System.out.println("get_card: " + number + " " + s);
+			//System.out.println("get_card: " + number + " " + s);
 			String s2 = number + "\t" + s;
 			
 			
