@@ -15,7 +15,7 @@ public class Launch {
 		
 //===============BETTA
 		 Frame_day day = new Day(); 
-		 Sortable sort_day = new Sort_day();
+		 Sortable sort_day = new Sort_day();   
 		 
 		 Sortable sort_betta = new Sort_day();
 		  

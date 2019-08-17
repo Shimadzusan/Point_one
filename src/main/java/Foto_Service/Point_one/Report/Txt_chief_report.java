@@ -160,7 +160,7 @@ public class Txt_chief_report {
 	
 			byte[] buffer = new byte[fin.available()];
 		        fin.read(buffer, 0, buffer.length);
-		        	String s = new String(buffer, "utf-8");
+		        	String s = new String(buffer, "cp1251");
 		        		//System.out.println(s.length());
 		        			fin.close();
 		        			

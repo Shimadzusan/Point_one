@@ -29,7 +29,7 @@ public class Xml_history {
 			
 			byte[] buffer = new byte[fin.available()];
 		        fin.read(buffer, 0, buffer.length);
-		        	String s = removeLastChar(new String(buffer, "utf-8"));
+		        	String s = removeLastChar(new String(buffer, "cp1251"));
 		        		//System.out.println(s.length());
 		        			fin.close();
 		        			
@@ -53,7 +53,6 @@ public class Xml_history {
 		}
 		
 		public void delete_last_note() {
-			//!!!!
-			
+
 		}
 }
