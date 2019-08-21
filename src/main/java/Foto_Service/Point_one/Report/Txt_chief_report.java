@@ -1,8 +1,10 @@
 package Foto_Service.Point_one.Report;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,8 @@ public class Txt_chief_report {
 		this.sort_day = sort_day;
 		 
 		commit_report();
+		
+		delete_last_note();
 		
 		System.out.println("txt(for excell) report committed");
 	}
@@ -323,6 +327,70 @@ public class Txt_chief_report {
 			
 			
 	return s2;
+	}
+	
+	private void delete_last_note() throws IOException {
+		System.out.println("last note deleted");
+		
+FileInputStream fin = new FileInputStream(address);
+		
+		byte[] buffer = new byte[fin.available()];
+	        fin.read(buffer, 0, buffer.length);
+	        	String s = new String(buffer, "cp1251");
+	        			fin.close();
+	        			
+//	        			System.out.println("**********************");
+//	        			System.out.println(s);
+	        			
+	     //parse marker date
+	        	String[] part = s.split("дата");
+	        	//System.out.println(":");
+	     //assemble
+	        	ArrayList<String> part2 = new ArrayList<String>();
+		        
+	        	for(int i = 0; i < part.length; i++) {
+	        		if(i == 0)part2.add(part[i]);
+	        		else part2.add("дата" + part[i]);
+	        	}
+	      //next step
+	        	//System.out.println(part2.size());
+	        	 String first = (part2.get(part2.size() - 1)).substring(127, 137);
+//	        	byte[] bt = first.getBytes();
+//	        	for(int x = 0; x < bt.length; x++) {
+//	        		System.out.print(bt[x] + " ");
+//	        	}
+	       String second = (part2.get(part2.size() - 2)).substring(127, 137);
+	       
+//	       System.out.println("+++");
+//	       System.out.println("f: " + first);
+//	       System.out.println("s: " + second);
+//	       System.out.println();
+//	        	
+//	        	System.out.println(part2.get(1));
+//	        	System.out.println(part2.get(5));
+	        	
+	     // next step equal
+	        	if(first.equals(second)) {
+	 	    	   //System.out.println("true");
+	 	    	   part2.remove(part2.size() - 2);
+	 	       }
+	 	       else {
+	 	    	 // System.out.println("false");
+	 	       }
+	 	       
+	 	       //System.out.println("-----------------");
+	 	      String obj = "";
+	 	       for(int i = 0; i < part2.size(); i++) {
+	 	    	   obj += part2.get(i);
+	 	       }
+	 	       
+	 	       
+	 	      FileOutputStream fos = new FileOutputStream(address);
+		       
+		       byte[] buffer2 = obj.getBytes();
+	       	fos.write(buffer2, 0, buffer2.length);
+
+	       	fos.close();
 	}
 
 }

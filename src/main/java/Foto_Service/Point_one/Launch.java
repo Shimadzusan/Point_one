@@ -13,16 +13,23 @@ public class Launch {
 
 	public static void main(String[] args) throws IOException {
 		
+		long start_time = System.nanoTime();
+		long start_time2 = System.currentTimeMillis();
+			//System.out.println();
+//				System.out.println("run time: " + (System.nanoTime() - start_time) + " nano-s.");
 //===============BETTA
+//				System.out.println("run time: " + (System.currentTimeMillis() - start_time2) + " mili-s.");
+		
 		 Frame_day day = new Day(); 
 		 Sortable sort_day = new Sort_day();   
 		 
 		 Sortable sort_betta = new Sort_day();
 		  
 
-		 Recognize recognize = new Recognize("C:\\Users\\AMD WIN\\Desktop\\statement.txt", day);
+		 Recognize recognize = new Recognize("C:\\Users\\user\\Desktop\\statement.txt", day);
 //C:\Users\AMD WIN\Desktop 
 //C:\\Users\\Aleksey\\Desktop\\statement.txt
+// C:\Users\\user
 		 
 		 Deep_Recognize deep = new Deep_Recognize(day, sort_day);
 		 
@@ -67,8 +74,11 @@ public class Launch {
 		 System.out.println();
 		 System.out.println("=====reporting mode=====");
 //		 	//new Excell_chief_report();
-		 	new Txt_chief_report( day, sort_day);
+		 	//new Txt_chief_report( day, sort_day);
 		 	new Xml_history( day, sort_day);
+		 	
+		 	new Txt_chief_report( day, sort_day);
+		 	
 //		 	System.out.println();
 ////Octavian_excell
 //		 	System.out.println("+===Point_one(object_Day(Betta))===+");
@@ -86,6 +96,9 @@ public class Launch {
 //		 	}
 //		 	//ArrayList<Sring> list_three
 //		 	System.out.println("фнд: " + sort_day.get_list_foto());
+		
+			//System.out.println("run time: " + (System.nanoTime() - start_time) + " nano-s.");
+			System.out.println("perfomance(run time): " + (System.currentTimeMillis() - start_time2) + " mili-s.");
 	}
 
 }

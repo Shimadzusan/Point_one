@@ -27,8 +27,8 @@ class Recognize {
 		FileInputStream fin = new FileInputStream(address);  
 	        byte[] buffer = new byte[fin.available()];
 	        	fin.read(buffer, 0, buffer.length);
-	        		String s = new String(buffer, "Cp1251");
-	        		System.out.println(s);
+	        		String s = new String(buffer, "cp1251");
+	        		//System.out.println(s);
 	        			return s;
 	}
 //begin day_init complex, this complex contains 3 methods

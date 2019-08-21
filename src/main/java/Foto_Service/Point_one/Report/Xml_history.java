@@ -22,6 +22,7 @@ public class Xml_history {
 			commit_report();
 			
 			System.out.println("xml(for history) article added");
+			delete_last_note();
 		}
 
 		private void commit_report() throws IOException {
@@ -52,7 +53,7 @@ public class Xml_history {
 		    return str.substring(0, str.length() - 1);
 		}
 		
-		public void delete_last_note() {
-
+		public void delete_last_note() throws IOException {
+new Saga();
 		}
 }
