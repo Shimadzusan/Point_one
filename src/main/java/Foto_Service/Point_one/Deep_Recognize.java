@@ -3,7 +3,13 @@ package Foto_Service.Point_one;
 import java.util.ArrayList;
 
 public class Deep_Recognize {
-	
+/*
+ * this class recognize patterns from object_Day
+ * from facture, that contains object_Day
+ * при этом источник фактуры может быть каким угодно, т.к.ё обращение происходит через интерфейс Facturable
+ * класс претерпел существенные изменения(в худшую сторону) после создания отчетности для chief_excell
+ * and initialize object_Sort_day
+ */
 	Facturable facture;
 	Sortable sort_day;
 	ArrayList deal_list;
@@ -13,10 +19,10 @@ public class Deep_Recognize {
 		this.sort_day = sort_day;
 		deal_list = (ArrayList<String>) facture.get_facture();
 
-		balance();
+		init_sort_day_data();
 	}
 	
-	public int balance() {
+	public int init_sort_day_data() {
 
 		ArrayList<String> list_foto;
 		ArrayList<String> list_copy;
@@ -38,7 +44,7 @@ public class Deep_Recognize {
 			for(int i = 0; i < deal_list.size(); i++) {
 				String s = (String)deal_list.get(i);
 				
-//card_data
+//initialize card_data
 				if(s.contains("сбер") || s.contains("тинькофф")  || s.contains("почта-банк") || s.contains("сбербанк") || s.contains("тинькоф")) {
 					if(sort_day.get_list_card_data() != null) {
 						list_card_data = (ArrayList<String>) sort_day.get_list_card_data();
@@ -154,11 +160,9 @@ public class Deep_Recognize {
 				sort_day.set_list_pults(list_pults);
 			}
 		}
-		
-		
-				
+					
 //=======================================================================================
-				
+//здесь считаем, то есть выводим баланс			
 					if(s.contains("минус")) {
 						//payment += get_number((String)deal_list.get(i));
 						sort_day.set_payment(sort_day.get_payment() + get_number((String)deal_list.get(i)));

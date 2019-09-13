@@ -4,34 +4,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Foto_Service.Point_one.Report.Excell_chief_report;
+import Foto_Service.Point_one.Report.Json_history;
 import Foto_Service.Point_one.Report.Txt_chief_report;
 import Foto_Service.Point_one.Report.Xml_history;
 
 public class Launch {
 
-
 	public static void main(String[] args) throws IOException {
 		
-		long start_time = System.nanoTime();
-		long start_time2 = System.currentTimeMillis();
-			//System.out.println();
-//				System.out.println("run time: " + (System.nanoTime() - start_time) + " nano-s.");
-//===============BETTA
-//				System.out.println("run time: " + (System.currentTimeMillis() - start_time2) + " mili-s.");
+		//long start_time = System.nanoTime();
+		long start_time2 = System.currentTimeMillis(); //perfomance monitoring
 		
-		 Frame_day day = new Day(); 
-		 Sortable sort_day = new Sort_day();   
-		 
-		 Sortable sort_betta = new Sort_day();
+		Frame_day day = new Day(); 
+		Sortable sort_day = new Sort_day();   
 		  
-
-		 Recognize recognize = new Recognize("C:\\Users\\user\\Desktop\\statement.txt", day);
-//C:\Users\AMD WIN\Desktop 
-//C:\\Users\\Aleksey\\Desktop\\statement.txt
-// C:\Users\\user
-		 
-		 Deep_Recognize deep = new Deep_Recognize(day, sort_day);
+		Recognize recognize = new Recognize("statement.txt", day);		 
+		Deep_Recognize deep = new Deep_Recognize(day, sort_day);
 		 
 //console interface
 //object_Day
@@ -73,33 +61,12 @@ public class Launch {
 //=========Report
 		 System.out.println();
 		 System.out.println("=====reporting mode=====");
-//		 	//new Excell_chief_report();
-		 	//new Txt_chief_report( day, sort_day);
-		 	new Xml_history( day, sort_day);
-		 	
+		 
+		 	new Json_history( day, sort_day);
 		 	new Txt_chief_report( day, sort_day);
 		 	
-//		 	System.out.println();
-////Octavian_excell
-//		 	System.out.println("+===Point_one(object_Day(Betta))===+");
-//		 	
-//		 	System.out.println(day.get_date());
-//			System.out.println("begin_cash: " + day.get_begin_cash());
-//			System.out.println("end_cash: " + day.get_end_cash());
-//		 	
-//		 	
-//		 	
-//		 	if(sort_day.get_list_foto() instanceof List) {
-//		 	ArrayList list_foto = (ArrayList) sort_day.get_list_foto();
-//		 	//System.out.println(list_foto.size());
-//		 	
-//		 	}
-//		 	//ArrayList<Sring> list_three
-//		 	System.out.println("фнд: " + sort_day.get_list_foto());
-		
 			//System.out.println("run time: " + (System.nanoTime() - start_time) + " nano-s.");
 			System.out.println("perfomance(run time): " + (System.currentTimeMillis() - start_time2) + " mili-s.");
 	}
 
 }
-

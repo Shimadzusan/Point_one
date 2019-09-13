@@ -10,19 +10,19 @@ import Foto_Service.Point_one.Frame_day;
 import Foto_Service.Point_one.Head;
 import Foto_Service.Point_one.Sortable;
 
-public class Xml_history extends Head {
-	//input: sort_day and day --> output: chiefs report(chief.txt)
+public class Json_history extends Head {
+	//input: sort_day and day --> output: json history(history.txt)
 		Sortable sort_day;
 		Frame_day day;
 		String address = "history.txt";
 		
-		public Xml_history(Frame_day day,Sortable sort_day) throws IOException {
+		public Json_history(Frame_day day,Sortable sort_day) throws IOException {
 			this.day = day;
 			this.sort_day = sort_day;
 			
 			commit_report();
 			
-			System.out.println("xml(for history) article added");
+			System.out.println("json(for history) article added");
 			delete_last_note();
 		}
 

@@ -6,7 +6,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Saga {
+import Foto_Service.Point_one.Head;
+
+public class Saga extends Head {
 	String address = "history.txt";
 	//String address = "[{123},{456}]";
 	
@@ -17,7 +19,7 @@ public class Saga {
 		
 		byte[] buffer = new byte[fin.available()];
 	        fin.read(buffer, 0, buffer.length);
-	        	String s = new String(buffer, "cp1251");
+	        	String s = new String(buffer, charset);
 	        			fin.close();
 	 //reset "[]"  
 //		String s = address;

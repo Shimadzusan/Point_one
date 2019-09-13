@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Foto_Service.Point_one.Frame_day;
+import Foto_Service.Point_one.Head;
 import Foto_Service.Point_one.Sortable;
 
-public class Txt_chief_report {
+public class Txt_chief_report extends Head {
 //input: sort_day and day --> output: chiefs report(chief.txt)
 	Sortable sort_day;
 	Frame_day day;
@@ -164,7 +165,7 @@ public class Txt_chief_report {
 	
 			byte[] buffer = new byte[fin.available()];
 		        fin.read(buffer, 0, buffer.length);
-		        	String s = new String(buffer, "cp1251");
+		        	String s = new String(buffer, charset);
 		        		//System.out.println(s.length());
 		        			fin.close();
 		        			
@@ -330,13 +331,13 @@ public class Txt_chief_report {
 	}
 	
 	private void delete_last_note() throws IOException {
-		System.out.println("last note deleted");
+		//System.out.println("last note deleted");
 		
 FileInputStream fin = new FileInputStream(address);
 		
 		byte[] buffer = new byte[fin.available()];
 	        fin.read(buffer, 0, buffer.length);
-	        	String s = new String(buffer, "cp1251");
+	        	String s = new String(buffer, charset);
 	        			fin.close();
 	        			
 //	        			System.out.println("**********************");

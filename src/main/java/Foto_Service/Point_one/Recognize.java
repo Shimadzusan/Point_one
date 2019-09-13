@@ -5,7 +5,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-class Recognize {
+class Recognize extends Head {
+/*
+ * this class recognize patterns from statement_data(statement.txt)
+ * and initialize object_Day 
+ */
+	
 	String address = "";
 	String text = "";
 	Frame_day day;
@@ -27,20 +32,19 @@ class Recognize {
 		FileInputStream fin = new FileInputStream(address);  
 	        byte[] buffer = new byte[fin.available()];
 	        	fin.read(buffer, 0, buffer.length);
-	        		String s = new String(buffer, "cp1251");
+	        		String s = new String(buffer, charset);
 	        		//System.out.println(s);
 	        			return s;
 	}
+
 //begin day_init complex, this complex contains 3 methods
-//==========================================================================================
+	
 	private void day_init() {
-		
 //***to parse the text
 		 day_list = text.split("\\r\\n"); //total notes for day (code 13 10 is new line)
-		        
+		 								  // ..from statement.txt
 		  for(int i = 0; i < day_list.length; i++) {
 	        	sort_kind(day_list[i]);
-	        		//System.out.println(day_list[i]);
 	        }
 	}
 
@@ -50,17 +54,17 @@ class Recognize {
 		if(element.contains("касса")) {
 			if(element.contains("утро")) day.set_begin_cash(get_number(element));
 			if(element.contains("вечер")) day.set_end_cash(get_number(element));
-			return;
+				return;
 		}
 //date
 		if(element.contains(".")) {
 			day.set_date(element); 
-			return;
+				return;
 		}
 //salary
 		if(element.contains("зп")) {
 			day.set_salary(get_number(element));
-			return;
+				return;
 		}			
 //facture_surface
 		day.set_facture(element);
@@ -68,10 +72,10 @@ class Recognize {
 	
 	private int get_number(String text) {
 		char[] ch = text.toCharArray();
-		String number = "";
-			for(int i = 0; i < ch.length; i++) {
-				if(Character.isDigit(ch[i]))number += "" + ch[i];
-			}
+			String number = "";
+				for(int i = 0; i < ch.length; i++) {
+					if(Character.isDigit(ch[i]))number += "" + ch[i];
+				}
 			
 	return Integer.parseInt(number);
 	}
