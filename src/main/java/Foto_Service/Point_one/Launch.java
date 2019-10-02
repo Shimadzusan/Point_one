@@ -15,7 +15,7 @@ public class Launch {
 		//long start_time = System.nanoTime();
 		long start_time2 = System.currentTimeMillis(); //perfomance monitoring
 		
-		Frame_day day = new Day(); 
+		Frame_day day = new Day();
 		Sortable sort_day = new Sort_day();   
 		  
 		Recognize recognize = new Recognize("statement.txt", day);		 

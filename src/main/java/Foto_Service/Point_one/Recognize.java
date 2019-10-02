@@ -18,6 +18,10 @@ class Recognize extends Head {
 	
 	String[] day_list;
 	
+	Recognize(Day day) {
+		this.day = day;
+	}
+	
 	Recognize(String address, Frame_day day) throws IOException {
 		this.address = address;
 		this.day = day;
@@ -48,7 +52,7 @@ class Recognize extends Head {
 	        }
 	}
 
-	private void sort_kind(String element) {
+	public void sort_kind(String element) {
 		
 //cash
 		if(element.contains("касса")) {
@@ -70,12 +74,14 @@ class Recognize extends Head {
 		day.set_facture(element);
 	}
 	
-	private int get_number(String text) {
+	public int get_number(String text) {
 		char[] ch = text.toCharArray();
 			String number = "";
 				for(int i = 0; i < ch.length; i++) {
 					if(Character.isDigit(ch[i]))number += "" + ch[i];
 				}
+			
+				if(number.length() == 0)number = "0";
 			
 	return Integer.parseInt(number);
 	}
