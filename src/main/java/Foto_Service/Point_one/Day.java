@@ -3,15 +3,16 @@ package Foto_Service.Point_one;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Day implements Frame_day, Facturable{
-	 String date;
-	 
-	 	List<String> facture;
-		int begin_cash;
-		int end_cash;
-		int salary;
+public class Day {
+	String date;
+	List<String> facture;
+	int begin_cash;
+	int end_cash;
+	int salary;
 		
-		Day() {
+		
+	public Day() {
+		System.out.println("reading from particular file");
 			facture = new ArrayList();
 		}
 	    
@@ -48,11 +49,11 @@ public class Day implements Frame_day, Facturable{
 	        return this.facture;
 	    }
 	    
-	    public void set_salary(int salary) {
+	    public void setSalary(int salary) {
 	        this.salary = salary;
 	    }
 	    
-	    public int get_salary() {
+	    public int getSalary() {
 	        return this.salary;
 	    }
 }

@@ -4,7 +4,7 @@
 
   <groupId>Foto-Service</groupId>
   <artifactId>Point_one</artifactId>
-  <version>report</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>Point_one</name>
@@ -13,70 +13,35 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
- <dependencies>
-   
-   <dependency>
-		<groupId>com.alibaba</groupId>
-		<artifactId>fastjson</artifactId>
-		<version>1.2.57</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>5.1.10.RELEASE</version>
 	</dependency>
 	
-     <dependency>
-  	<groupId>junit</groupId>
-  	<artifactId>junit</artifactId>
-  	<version>4.12</version>
-  	<scope>test</scope>
-  </dependency>
-  
-   <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-plugin-api</artifactId>
-            <version>2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-core</artifactId>
-            <version>3.1.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugin-tools</groupId>
-            <artifactId>maven-plugin-annotations</artifactId>
-            <version>3.5</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.javassist</groupId>
-            <artifactId>javassist</artifactId>
-            <version>3.21.0-GA</version>
-        </dependency>
-  
-  </dependencies>
-  
-<build>
-    <plugins>
-<plugin>
-  <artifactId>maven-antrun-plugin</artifactId>
-  <version>1.6</version>
-  <executions>
-    <execution>
-      <phase>install</phase>
-      <configuration>
-        <target>
-          <echo message="Hello world!" />
-        </target>
-      </configuration>
-      <goals>
-        <goal>run</goal>
-      </goals>
-    </execution>
-  </executions>
-</plugin>
-       
-        
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+	    <version>5.1.10.RELEASE</version>
+	</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>5.1.10.RELEASE</version>
+	</dependency>
     
-      
-    </plugins>
-  </build>
- 
+  </dependencies>
 </project>
