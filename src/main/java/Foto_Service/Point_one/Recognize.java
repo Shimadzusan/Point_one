@@ -25,7 +25,7 @@ class Recognize extends Head {
 	Recognize(String address, Frame_day day) throws IOException {
 		this.address = address;
 		this.day = day;
-		day_facture = new ArrayList();
+		day_facture = new ArrayList<String>();
 		this.text = get_text();
 		day_init();
 		
